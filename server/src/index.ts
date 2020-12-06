@@ -11,8 +11,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post("/login", loginRouter);
-app.get("/plans", plansRouter);
+app.use("/login", loginRouter);
+app.use("/plans", plansRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening at: ${PORT}`);
