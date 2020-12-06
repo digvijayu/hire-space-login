@@ -1,9 +1,9 @@
 import { Router } from "express";
 
+import { authenticateUser } from "./../middleware/auth";
+
 const loginRouter = Router();
 
-loginRouter.route("/").get((req, res) => {
-  res.send("test response");
-});
+loginRouter.route("/").get(authenticateUser);
 
 export default loginRouter;
